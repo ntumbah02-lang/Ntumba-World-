@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ntumba World • Réservations & Mobilité VIP RDC</title>
+
+  <!-- Application mobile -->
+  <meta name="theme-color" content="#0a192f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Ntumba World">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Tailwind CSS & Google Fonts Outfit -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Outfit', 'sans-serif'] },
+          colors: {
+            brand: {
+              dark: '#0a192f',
+              card: '#112240',
+              gold: '#c5a059',
+              goldLight: '#e0c07d',
+              accent: '#00d285',
+              surface: '#f8f9ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-[#07111e] text-slate-100 min-h-screen flex flex-col pb-24 antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+  <!-- En-tête -->
+  <header class="sticky top-0 z-40 bg-[#0a192f]/95 backdrop-blur-md border-b border-white/10 px-4 py-3.5 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-gold to-yellow-200 flex items-center justify-center shadow-lg shadow-yellow-500/10">
+        <span class="text-brand-dark font-extrabold text-base tracking-tighter">NW</span>
+      </div>
+      <div>
+        <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
+          Ntumba World
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        </h1>
+        <p class="text-[10px] text-brand-gold font-medium tracking-wide">Conciergerie & Réservations RDC</p>
+      </div>
+    </div>
+
+    <a href="https://wa.me/243810649049?text=Bonjour%20Ntumba%20World%2C%20je%20souhaite%20un%20renseignement%20sur%20vos%20services." target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-semibold hover:bg-emerald-500/25 transition">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+      <span>0810649049</span>
+    </a>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="px-4 py-4 max-w-md mx-auto w-full space-y-6">
+
+    <!-- Bannière d'accueil -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#112240] via-[#0d1b33] to-[#0a192f] p-5 border border-brand-gold/30 shadow-xl">
+      <div class="relative z-10">
+        <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-brand-goldLight text-[11px] font-bold uppercase tracking-wider mb-2">
+          Kinshasa & RDC Express
+        </span>
+        <h2 class="text-xl font-extrabold text-white leading-tight">
+          Réservez sans intermédiaire en toute sérénité.
+        </h2>
+        <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+          Taxis VIP, Motos, Billets d’avion, Hôtels, Résidences & Salles d'exception. Confirmation rapide sur WhatsApp.
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <button onclick="openBookingModal('Taxi VIP')" class="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-300 text-brand-dark text-xs font-bold shadow-lg shadow-brand-gold/20 hover:opacity-95 active:scale-95 transition">
+            Commander un trajet
+          </button>
+          <a href="#tarifs" class="text-xs text-brand-goldLight underline underline-offset-4 font-semibold">
+            Voir tous les tarifs
+          </a>
+        </div>
+      </div>
+      <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl"></div>
+    </div>
+
+    <!-- Grille des 6 services -->
+    <section>
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          Nos Services Disponibles
+        </h3>
+        <span class="text-[10px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded-full">Actifs 24h/7</span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Service 1 : Taxi VIP -->
+        <div onclick="openBookingModal('Taxi VIP')" class="cursor-pointer bg-brand-card/70 border border-white/10 hover:border-brand-gold/50 rounded-xl p-3.5 flex flex-col justify-between active:scale-[0.98] transition">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🚖</span>
+            <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Climatisé</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Taxi VIP</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Gombe, Aéroport N'djili, Centre-ville</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand-gold">Dès 15 $</span>
+            <span class="text-[10px] text-slate-400">Commander →</span>
+          </div>
+        </div>
+
+        <!-- Service 2 : Moto VIP -->
+        <div onclick="openBookingModal('Moto Express')" class="cursor-pointer bg-brand-card/70 border border-white/10 hover:border-brand-gold/50 rounded-xl p-3.5 flex flex-col justify-between active:scale-[0.98] transition">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏍️</span>
+            <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">Anti-Bouchon</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Moto VIP</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Chauffeur certifié avec casque pro</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand-gold">Dès 3 000 CDF</span>
+            <span class="text-[10px] text-slate-400">Commander →</span>
+          </div>
+        </div>
+
+        <!-- Service 3 : Billets d'avion -->
+        <div onclick="openBookingModal('Billet Avion')" class="cursor-pointer bg-brand-card/70 border border-white/10 hover:border-brand-gold/50 rounded-xl p-3.5 flex flex-col justify-between active:scale-[0.98] transition">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">✈️</span>
+            <span class="text-[10px] font-bold text-sky-400 bg-sky-500/10 px-1.5 py-0.5 rounded">National & Int.</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Billets d'Avion</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Kinshasa, Lubumbashi, Goma, Paris</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand-gold">Meilleur tarif</span>
+            <span class="text-[10px] text-slate-400">Réserver →</span>
+          </div>
+        </div>
+
+        <!-- Service 4 : Hôtels -->
+        <div onclick="openBookingModal('Hôtel')" class="cursor-pointer bg-brand-card/70 border border-white/10 hover:border-brand-gold/50 rounded-xl p-3.5 flex flex-col justify-between active:scale-[0.98] transition">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏨</span>
+            <span class="text-[10px] font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded">Réservation directe</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Hôtels & Séjours</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Fleuve Congo, Pullman, Sultani & Co</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand-gold">Sans frais cachés</span>
+            <span class="text-[10px] text-slate-400">Réserver →</span>
+          </div>
+        </div>
+
+        <!-- Service 5 : Appartements meublés -->
+        <div onclick="openBookingModal('Appartement Meublé')" class="cursor-pointer bg-brand-card/70 border border-white/10 hover:border-brand-gold/50 rounded-xl p-3.5 flex flex-col justify-between active:scale-[0.98] transition">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏢</span>
+            <span class="text-[10px] font-bold text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded">Standing VIP</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Résidences</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Gombe, Ngaliema, Macampagne</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand-gold">Jour / Mois</span>
+            <span class="text-[10px] text-slate-400">Consulter →</span>
+          </div>
+        </div>
+
+        <!-- Service 6 : Salles de fête -->
+        <div onclick="openBookingModal('Salle de Fête')" class="cursor-pointer bg-brand-card/70 border border-white/10 hover:border-brand-gold/50 rounded-xl p-3.5 flex flex-col justify-between active:scale-[0.98] transition">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🎉</span>
+            <span class="text-[10px] font-bold text-yellow-400 bg-yellow-500/10 px-1.5 py-0.5 rounded">Événements</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Salles de Fête</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Mariages, galas, anniversaires</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand-gold">Sur devis</span>
+            <span class="text-[10px] text-slate-400">Visiter →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paiements Mobile Money -->
+    <section id="tarifs" class="bg-brand-card/90 rounded-2xl p-4 border border-white/10 space-y-3">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+          <span>💳</span> Paiements Mobile Money
+        </h3>
+        <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+          Numéros officiels
+        </span>
+      </div>
+
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Effectuez vos règlements directement sur nos lignes marchandes officielles, puis envoyez-nous la preuve de paiement :
+      </p>
+
+      <div class="space-y-2">
+        <!-- Vodacom M-Pesa -->
+        <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/20 border border-white/5">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center font-bold text-red-400 text-xs">
+              M
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Vodacom M-Pesa</p>
+              <p class="text-[11px] font-mono text-brand-gold">0810649049</p>
+            </div>
+          </div>
+          <button onclick="copyToClipboard('0810649049', this)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-[10px] font-medium text-slate-200 border border-white/10 transition">
+            Copier
+          </button>
+        </div>
+
+        <!-- Airtel Money -->
+        <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/20 border border-white/5">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-rose-600/20 border border-rose-500/30 flex items-center justify-center font-bold text-rose-400 text-xs">
+              A
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Airtel Money</p>
+              <p class="text-[11px] font-mono text-brand-gold">0962674721</p>
+            </div>
+          </div>
+          <button onclick="copyToClipboard('0962674721', this)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-[10px] font-medium text-slate-200 border border-white/10 transition">
+            Copier
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 text-[11px] text-slate-400 flex items-center gap-1.5">
+        <span class="text-emerald-400">✓</span> Après paiement, envoyez la capture ou la référence au <strong class="text-slate-200">0810649049</strong>.
+      </div>
+    </section>
+
+    <!-- Espace partenaires -->
+    <section class="p-4 rounded-2xl bg-gradient-to-r from-brand-gold/10 to-transparent border border-brand-gold/20 flex items-center justify-between">
+      <div>
+        <h4 class="text-xs font-bold text-brand-goldLight uppercase tracking-wider">Espace Partenaires</h4>
+        <p class="text-xs text-slate-300 mt-0.5">Chauffeur, Hôtel ou Propriétaire ?</p>
+        <p class="text-[10px] text-slate-400">Rejoignez le réseau Ntumba World</p>
+      </div>
+      <a href="https://wa.me/243810649049?text=Bonjour%20Ntumba%20World%2C%20je%20souhaite%20inscrire%20mon%20%C3%A9tablissement%20ou%20v%C3%A9hicule%20en%20tant%20que%20partenaire." target="_blank" rel="noopener" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold text-white transition">
+        S'inscrire →
+      </a>
+    </section>
+
+    <!-- Assistance -->
+    <div class="text-center py-4 space-y-2">
+      <p class="text-xs text-slate-400">Besoin d'aide immédiate pour votre réservation ?</p>
+      <a href="https://wa.me/243810649049?text=Bonjour%20la%20Conciergerie%20Ntumba%20World%2C%20j'ai%20besoin%20d'assistance." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white font-bold text-xs shadow-lg shadow-emerald-600/20 active:scale-95 transition">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Assistance WhatsApp directe (0810649049)
+      </a>
+      <p class="text-[10px] text-slate-500 pt-2">© 2026 Ntumba World • République Démocratique du Congo</p>
+    </div>
+
+  </main>
+
+  <!-- Fenêtre de réservation -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-[#0f1f38] border border-white/10 w-full max-w-md rounded-t-3xl sm:rounded-2xl p-5 space-y-4 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <span>📝</span> Confirmer votre réservation
+          </h3>
+          <p id="modalServiceTitle" class="text-xs text-brand-gold font-semibold">Service sélectionné</p>
+        </div>
+        <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center font-bold">
+          ✕
+        </button>
+      </div>
+
+      <form id="reservationForm" onsubmit="submitReservation(event)" class="space-y-3">
+        <input type="hidden" id="selectedService" value="Taxi VIP">
+
+        <div>
+          <label for="clientName" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">Votre nom & prénom</label>
+          <input type="text" id="clientName" required placeholder="Ex : Jean Mukendi" class="w-full bg-[#0a1526] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-gold placeholder:text-slate-500">
+        </div>
+
+        <div>
+          <label for="bookingDetails" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">Détails (lieu de départ, destination ou dates)</label>
+          <textarea id="bookingDetails" rows="2" required placeholder="Ex : Départ Gombe vers Aéroport N'djili, vol à 14h" class="w-full bg-[#0a1526] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-gold placeholder:text-slate-500"></textarea>
+        </div>
+
+        <div>
+          <label for="paymentChoice" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">Mode de règlement préféré</label>
+          <select id="paymentChoice" class="w-full bg-[#0a1526] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-gold">
+            <option value="M-Pesa (0810649049)">Vodacom M-Pesa (0810649049)</option>
+            <option value="Airtel Money (0962674721)">Airtel Money (0962674721)</option>
+            <option value="Espèces / Cash au départ">Espèces / Cash direct</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 text-brand-dark font-extrabold text-sm shadow-lg shadow-emerald-500/20 active:scale-95 transition flex items-center justify-center gap-2">
+          <span>Envoyer sur WhatsApp</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Barre de navigation inférieure -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 bg-[#0a192f]/95 backdrop-blur-lg border-t border-white/10 px-6 py-2.5 flex items-center justify-around max-w-md mx-auto">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="flex flex-col items-center gap-1 text-brand-gold">
+      <span class="text-lg">🏠</span>
+      <span class="text-[10px] font-bold">Accueil</span>
+    </button>
+    <button onclick="openBookingModal('Taxi VIP')" class="flex flex-col items-center gap-1 text-slate-400 hover:text-white">
+      <span class="text-lg">🚖</span>
+      <span class="text-[10px]">Course</span>
+    </button>
+    <a href="#tarifs" class="flex flex-col items-center gap-1 text-slate-400 hover:text-white">
+      <span class="text-lg">💳</span>
+      <span class="text-[10px]">Paiement</span>
+    </a>
+    <a href="https://wa.me/243810649049?text=Bonjour%20Ntumba%20World" target="_blank" rel="noopener" class="flex flex-col items-center gap-1 text-emerald-400">
+      <span class="text-lg">💬</span>
+      <span class="text-[10px] font-bold">Contact</span>
+    </a>
+  </nav>
+
+  <script>
+    function openBookingModal(serviceName) {
+      document.getElementById('selectedService').value = serviceName;
+      document.getElementById('modalServiceTitle').textContent = 'Réservation : ' + serviceName;
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function submitReservation(e) {
+      e.preventDefault();
+      const service = document.getElementById('selectedService').value;
+      const client = document.getElementById('clientName').value;
+      const details = document.getElementById('bookingDetails').value;
+      const payment = document.getElementById('paymentChoice').value;
+
+      const message = `*RÉSERVATION NTUMBA WORLD*\n\n` +
+                      `📌 *Service :* ${service}\n` +
+                      `👤 *Nom :* ${client}\n` +
+                      `📝 *Détails :* ${details}\n` +
+                      `💳 *Mode de paiement :* ${payment}\n\n` +
+                      `_Merci de me confirmer la prise en charge._`;
+
+      const whatsappUrl = `https://wa.me/243810649049?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      closeBookingModal();
+    }
+
+    function copyToClipboard(text, btnElement) {
+      const showCopied = () => {
+        const originalText = btnElement.textContent;
+        btnElement.textContent = 'Copié !';
+        btnElement.classList.add('text-emerald-400');
+        setTimeout(() => {
+          btnElement.textContent = originalText;
+          btnElement.classList.remove('text-emerald-400');
+        }, 1800);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(showCopied)
+          .catch(() => fallbackCopy(text, showCopied));
+      } else {
+        fallbackCopy(text, showCopied);
+      }
+    }
+
+    // Solution de secours si le copier automatique est bloqué
+    function fallbackCopy(text, onDone) {
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      try {
+        document.execCommand('copy');
+        onDone();
+      } catch (err) {
+        alert('Copie impossible. Numéro : ' + text);
+      }
+      document.body.removeChild(area);
+    }
+
+    // Fermeture de la fenêtre en cliquant à l'extérieur
+    window.onclick = function(event) {
+      const modal = document.getElementById('bookingModal');
+      if (event.target === modal) {
+        closeBookingModal();
+      }
+    }
+  </script>
+</body>
+  </html>
